@@ -7,7 +7,6 @@
 <title>Bienestar Activo | Masoterapia y Bienestar</title>
 
 <meta name="description" content="Renueva tu cuerpo, impulsa tu rendimiento. Agenda tu sesión de masoterapia con Bienestar Activo.">
-
 <meta property="og:title" content="Bienestar Activo">
 <meta property="og:description" content="Masoterapia y bienestar integral">
 <meta property="og:image" content="logo.jpg">
@@ -24,8 +23,7 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:
-radial-gradient(circle at top,#ffffff 0%, #eef8f5 100%);
+background:radial-gradient(circle at top,#ffffff 0%, #eef8f5 100%);
 min-height:100vh;
 display:flex;
 justify-content:center;
@@ -158,31 +156,6 @@ height:145px;
 }
 </style>
 
-<!-- Google Analytics opcional -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-
-<script>
-window.dataLayer=window.dataLayer||[];
-
-function gtag(){
-dataLayer.push(arguments);
-}
-
-gtag('js',new Date());
-gtag('config','G-XXXXXX');
-
-function trackClick(link){
-gtag('event','click',{
-event_category:'links',
-event_label:link
-});
-}
-
-function registrarLead(){
-fetch("https://api.countapi.xyz/hit/bienestaractivo-masoterapia/leads");
-}
-</script>
-
 </head>
 
 <body>
@@ -190,11 +163,7 @@ fetch("https://api.countapi.xyz/hit/bienestaractivo-masoterapia/leads");
 <div class="container">
 <div class="card">
 
-<img
-src="logo.jpg"
-alt="Bienestar Activo"
-class="logo"
-/>
+<img src="logo.jpg" alt="Bienestar Activo" class="logo">
 
 <h1>Bienestar Activo</h1>
 
@@ -208,7 +177,7 @@ Masoterapia y bienestar integral.
 
 <a
 class="button whatsapp"
-onclick="trackClick('whatsapp'); registrarLead();"
+onclick="registrarLead()"
 href="https://wa.me/573115293370?text=Hola,%20quiero%20información"
 target="_blank">
 💬 Agenda por WhatsApp
@@ -216,7 +185,6 @@ target="_blank">
 
 <a
 class="button instagram"
-onclick="trackClick('instagram')"
 href="https://www.instagram.com/bienestaractivo_masoterapeuta/"
 target="_blank">
 📷 Ver Instagram
@@ -225,7 +193,6 @@ target="_blank">
 </div>
 
 <div class="services">
-
 <h3>Servicios</h3>
 
 <div class="service">✨ Masoterapia terapéutica</div>
@@ -251,14 +218,18 @@ Bienestar Activo © 2026
 </div>
 
 <script>
-fetch("https://api.countapi.xyz/hit/bienestaractivo-masoterapia/visitas")
-.then(res=>res.json())
-.then(data=>{
-document.getElementById("visits").innerText=data.value;
+fetch("/.netlify/functions/counter?type=visitas")
+.then(res => res.json())
+.then(data => {
+document.getElementById("visits").innerText = data.value;
 })
-.catch(()=>{
-document.getElementById("visits").innerText="—";
+.catch(() => {
+document.getElementById("visits").innerText = "—";
 });
+
+function registrarLead(){
+fetch("/.netlify/functions/counter?type=leads");
+}
 </script>
 
 </body>
