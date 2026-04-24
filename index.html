@@ -6,18 +6,16 @@
 
 <title>Bienestar Activo | Masoterapia y Bienestar</title>
 
-<meta name="description"
-content="Renueva tu cuerpo, impulsa tu rendimiento. Agenda tu sesión de masoterapia con Bienestar Activo.">
+<meta name="description" content="Renueva tu cuerpo, impulsa tu rendimiento. Agenda tu sesión de masoterapia con Bienestar Activo.">
 
 <meta property="og:title" content="Bienestar Activo">
 <meta property="og:description" content="Masoterapia y bienestar integral">
-<meta property="og:image" content="logo.png">
+<meta property="og:image" content="logo.jpg">
 <meta property="og:type" content="website">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -46,9 +44,7 @@ background:#fff;
 border-radius:38px;
 padding:42px 30px;
 text-align:center;
-
-box-shadow:
-0 12px 40px rgba(22,65,60,.08);
+box-shadow:0 12px 40px rgba(22,65,60,.08);
 }
 
 .logo{
@@ -58,10 +54,7 @@ object-fit:cover;
 border-radius:50%;
 padding:8px;
 background:white;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.08);
-
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 margin-bottom:25px;
 }
 
@@ -100,17 +93,13 @@ transform:translateY(-4px) scale(1.02);
 }
 
 .whatsapp{
-background:
-linear-gradient(135deg,#25D366,#17b959);
+background:linear-gradient(135deg,#25D366,#17b959);
 color:white;
-
-box-shadow:
-0 8px 20px rgba(37,211,102,.35);
+box-shadow:0 8px 20px rgba(37,211,102,.35);
 }
 
 .instagram{
-background:
-linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
 color:white;
 }
 
@@ -148,29 +137,16 @@ font-size:12px;
 color:#78908f;
 }
 
-.floating-whatsapp{
-position:fixed;
-right:22px;
-bottom:22px;
-width:65px;
-height:65px;
-border-radius:50%;
-background:#25D366;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:
-0 10px 25px rgba(37,211,102,.35);
-}
-
-.floating-whatsapp:hover{
-transform:scale(1.06);
+#visitor-counter{
+margin-top:18px;
+font-size:11px;
+color:#93a9a5;
+opacity:.78;
+font-weight:500;
+letter-spacing:.2px;
 }
 
 @media(max-width:480px){
-
 h1{
 font-size:30px;
 }
@@ -179,14 +155,10 @@ font-size:30px;
 width:145px;
 height:145px;
 }
-
 }
-
 </style>
 
-
-<!-- Google Analytics (opcional) -->
-<!-- Reemplaza G-XXXXXX con tu ID -->
+<!-- Google Analytics opcional -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
 
 <script>
@@ -199,28 +171,23 @@ dataLayer.push(arguments);
 gtag('js',new Date());
 gtag('config','G-XXXXXX');
 
-
 function trackClick(link){
-
-gtag(
-'event',
-'click',
-{
+gtag('event','click',{
 event_category:'links',
 event_label:link
+});
 }
-);
 
+function registrarLead(){
+fetch("https://api.countapi.xyz/hit/bienestaractivo-masoterapia/leads");
 }
 </script>
 
-
 </head>
+
 <body>
 
-
 <div class="container">
-
 <div class="card">
 
 <img
@@ -237,17 +204,15 @@ Impulsa tu rendimiento.<br>
 Masoterapia y bienestar integral.
 </div>
 
-
 <div class="links">
 
 <a
 class="button whatsapp"
-onclick="trackClick('whatsapp')"
+onclick="trackClick('whatsapp'); registrarLead();"
 href="https://wa.me/573115293370?text=Hola,%20quiero%20información"
 target="_blank">
 💬 Agenda por WhatsApp
 </a>
-
 
 <a
 class="button instagram"
@@ -259,41 +224,42 @@ target="_blank">
 
 </div>
 
-
 <div class="services">
 
 <h3>Servicios</h3>
 
-<div class="service">
-✨ Masoterapia terapéutica
-</div>
-
-<div class="service">
-💆 Relajación y manejo del estrés
-</div>
-
-<div class="service">
-🌿 Recuperación muscular
-</div>
-
-<div class="service">
-⚡ Bienestar y rendimiento
-</div>
+<div class="service">✨ Masoterapia terapéutica</div>
+<div class="service">💆 Relajación y manejo del estrés</div>
+<div class="service">🌿 Recuperación muscular</div>
+<div class="service">⚡ Bienestar y rendimiento</div>
 
 </div>
-
 
 <div class="badge">
 Atención personalizada • Reserva fácil
 </div>
 
-
 <div class="footer">
 Bienestar Activo © 2026
 </div>
 
+<div id="visitor-counter">
+🌿 <span id="visits">...</span> personas han visitado este espacio
 </div>
 
 </div>
+</div>
+
+<script>
+fetch("https://api.countapi.xyz/hit/bienestaractivo-masoterapia/visitas")
+.then(res=>res.json())
+.then(data=>{
+document.getElementById("visits").innerText=data.value;
+})
+.catch(()=>{
+document.getElementById("visits").innerText="—";
+});
+</script>
+
 </body>
 </html>
