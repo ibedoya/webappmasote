@@ -26,43 +26,16 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
+background:
+url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 20 C70 5 85 25 65 40 C55 48 40 48 30 38 C20 28 30 10 50 20' fill='%23dff5ea'/%3E%3C/svg%3E"),
+linear-gradient(180deg,#fbfffd,#eef8f5);
+
+background-size:140px,cover;
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 padding:25px;
-color:#244b48;
-overflow:hidden;
-
-background:
-linear-gradient(135deg,#f6fffc 0%,#eef7ff 100%);
-position:relative;
-}
-
-body:before{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-top:-180px;
-left:-150px;
-background:rgba(122,216,176,.18);
-filter:blur(90px);
-border-radius:50%;
-z-index:-1;
-}
-
-body:after{
-content:"";
-position:fixed;
-width:450px;
-height:450px;
-bottom:-150px;
-right:-100px;
-background:rgba(72,170,224,.15);
-filter:blur(90px);
-border-radius:50%;
-z-index:-1;
 }
 
 .container{
@@ -71,13 +44,17 @@ max-width:430px;
 }
 
 .card{
-background:#fff;
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.6);
+
 border-radius:38px;
 padding:42px 30px;
-text-align:center;
 
 box-shadow:
-0 12px 40px rgba(22,65,60,.08);
+0 15px 45px rgba(0,0,0,.08);
 }
 
 .logo{
