@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bienestar Activo | Masoterapia y Bienestar</title>
+
+<meta name="description"
+content="Renueva tu cuerpo, impulsa tu rendimiento. Agenda tu sesión de masoterapia con Bienestar Activo.">
+
+<meta property="og:title" content="Bienestar Activo">
+<meta property="og:description" content="Masoterapia y bienestar integral">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:
+radial-gradient(circle at top,#ffffff 0%, #eef8f5 100%);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:25px;
+color:#244b48;
+}
+
+.container{
+width:100%;
+max-width:430px;
+}
+
+.card{
+background:#fff;
+border-radius:38px;
+padding:42px 30px;
+text-align:center;
+
+box-shadow:
+0 12px 40px rgba(22,65,60,.08);
+}
+
+.logo{
+width:165px;
+height:165px;
+object-fit:cover;
+border-radius:50%;
+padding:8px;
+background:white;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+}
+
+h1{
+font-size:34px;
+font-weight:700;
+color:#2f8c84;
+margin-bottom:12px;
+}
+
+.tagline{
+font-size:16px;
+line-height:1.8;
+color:#5b7371;
+margin-bottom:35px;
+}
+
+.links{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.button{
+display:block;
+padding:18px;
+border-radius:20px;
+text-decoration:none;
+font-weight:600;
+font-size:17px;
+transition:.3s;
+}
+
+.button:hover{
+transform:translateY(-4px) scale(1.02);
+}
+
+.whatsapp{
+background:
+linear-gradient(135deg,#25D366,#17b959);
+color:white;
+
+box-shadow:
+0 8px 20px rgba(37,211,102,.35);
+}
+
+.instagram{
+background:
+linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+color:white;
+}
+
+.services{
+margin-top:32px;
+background:#f7fbfa;
+padding:26px;
+border-radius:25px;
+}
+
+.services h3{
+margin-bottom:18px;
+color:#2f8c84;
+}
+
+.service{
+padding:8px 0;
+font-weight:500;
+}
+
+.badge{
+margin-top:28px;
+display:inline-block;
+background:#e9f7f3;
+padding:12px 22px;
+border-radius:50px;
+font-size:13px;
+font-weight:600;
+color:#2f8c84;
+}
+
+.footer{
+margin-top:30px;
+font-size:12px;
+color:#78908f;
+}
+
+.floating-whatsapp{
+position:fixed;
+right:22px;
+bottom:22px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:
+0 10px 25px rgba(37,211,102,.35);
+}
+
+.floating-whatsapp:hover{
+transform:scale(1.06);
+}
+
+@media(max-width:480px){
+
+h1{
+font-size:30px;
+}
+
+.logo{
+width:145px;
+height:145px;
+}
+
+}
+
+</style>
+
+
+<!-- Google Analytics (opcional) -->
+<!-- Reemplaza G-XXXXXX con tu ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+
+<script>
+window.dataLayer=window.dataLayer||[];
+
+function gtag(){
+dataLayer.push(arguments);
+}
+
+gtag('js',new Date());
+gtag('config','G-XXXXXX');
+
+
+function trackClick(link){
+
+gtag(
+'event',
+'click',
+{
+event_category:'links',
+event_label:link
+}
+);
+
+}
+</script>
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+<div class="card">
+
+<img
+src="logo.png"
+alt="Bienestar Activo"
+class="logo"
+/>
+
+<h1>Bienestar Activo</h1>
+
+<div class="tagline">
+Renueva tu cuerpo.<br>
+Impulsa tu rendimiento.<br>
+Masoterapia y bienestar integral.
+</div>
+
+
+<div class="links">
+
+<a
+class="button whatsapp"
+onclick="trackClick('whatsapp')"
+href="https://wa.me/573115293370?text=Hola,%20quiero%20agendar%20una%20sesión%20de%20masoterapia"
+target="_blank">
+💬 Agenda por WhatsApp
+</a>
+
+
+<a
+class="button instagram"
+onclick="trackClick('instagram')"
+href="https://www.instagram.com/bienestaractivo_masoterapeuta/"
+target="_blank">
+📷 Ver Instagram
+</a>
+
+</div>
+
+
+<div class="services">
+
+<h3>Servicios</h3>
+
+<div class="service">
+✨ Masoterapia terapéutica
+</div>
+
+<div class="service">
+💆 Relajación y manejo del estrés
+</div>
+
+<div class="service">
+🌿 Recuperación muscular
+</div>
+
+<div class="service">
+⚡ Bienestar y rendimiento
+</div>
+
+</div>
+
+
+<div class="badge">
+Atención personalizada • Reserva fácil
+</div>
+
+
+<div class="footer">
+Bienestar Activo © 2026
+</div>
+
+</div>
+
+</div>
+
+
+<a
+class="floating-whatsapp"
+onclick="trackClick('floating_whatsapp')"
+href="https://wa.me/573115293370"
+target="_blank">
+💬
+</a>
+
+
+</body>
+</html>
